@@ -31,6 +31,8 @@ public class CatTest {
     public void getFood() throws Exception {
         Cat cat = new Cat(feline);
         Mockito.when(feline.eatMeat()).thenReturn(Collections.singletonList("Кошка хищник"));
-        System.out.println(cat.getFood());
+        String actual = "[Кошка хищник]";
+        String expected = String.valueOf(cat.getFood());
+        assertThat(actual, equalTo(expected));
     }
 }

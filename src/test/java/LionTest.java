@@ -37,20 +37,21 @@ public class LionTest {
         return new Object[][] {
             { "Самец", "true"},
             { "Самка", "false"},
-            { "Оно", "Используйте допустимые значения пола животного - самец или самка"},
         };
     }
 
     @Test
     public void doesHaveMane () throws Exception {
-        try {
             Lion lion = new Lion(sex);
             String actual = String.valueOf(lion.doesHaveMane());
             assertEquals(expected, actual);
-        } catch (Exception ex) {
-            assertEquals(expected, ex.getMessage());
-        }
     }
+
+    @Test(expected = Exception.class)
+    public void doesHaveManeExeption () throws Exception {
+        Lion lion = new Lion("Оно");
+    }
+
 
     @Test
     public void getFood() throws Exception {

@@ -5,27 +5,27 @@ import java.util.List;
 public class Lion {
 
     boolean hasMane;
-    private Predator predator;
+    Predator predator;
 
-<span class="fc" id="L10">    public Lion(String sex) throws Exception {</span>
-<span class="fc bfc" id="L11" title="All 2 branches covered.">        if (&quot;Самец&quot;.equals(sex)) {</span>
-<span class="fc" id="L12">            hasMane = true;</span>
-<span class="fc bfc" id="L13" title="All 2 branches covered.">        } else if (&quot;Самка&quot;.equals(sex)) {</span>
-<span class="fc" id="L14">            hasMane = false;</span>
+<span class="fc" id="L10">    public Lion(Feline feline) {</span>
+
+<span class="fc" id="L12">        this.predator = feline;</span>
+<span class="fc" id="L13">    }</span>
+
+<span class="fc" id="L15">    public Lion(String sex) throws Exception {</span>
+<span class="fc bfc" id="L16" title="All 2 branches covered.">        if (&quot;Самец&quot;.equals(sex)) {</span>
+<span class="fc" id="L17">            hasMane = true;</span>
+<span class="fc bfc" id="L18" title="All 2 branches covered.">        } else if (&quot;Самка&quot;.equals(sex)) {</span>
+<span class="fc" id="L19">            hasMane = false;</span>
         } else {
-<span class="fc" id="L16">            throw new Exception(&quot;Используйте допустимые значения пола животного - самец или самка&quot;);</span>
+<span class="fc" id="L21">            throw new Exception(&quot;Используйте допустимые значения пола животного - самец или самка&quot;);</span>
         }
-<span class="fc" id="L18">    }</span>
+<span class="fc" id="L23">    }</span>
 
     public boolean doesHaveMane() {
 
-<span class="fc" id="L22">        return hasMane;</span>
+<span class="fc" id="L27">        return hasMane;</span>
     }
-
-<span class="fc" id="L25">    public Lion(Predator feline) {</span>
-
-<span class="fc" id="L27">        this.predator = feline;</span>
-<span class="fc" id="L28">    }</span>
 
     public List&lt;String&gt; getFood() throws Exception {
 
